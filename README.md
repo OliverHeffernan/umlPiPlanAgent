@@ -1,6 +1,9 @@
-# planningAgent
+# Pi Visual Plan
 
 This project contains [`Pi Visual Plan`](.pi/extensions/visual-plan/README.md), a pi extension for staged planning with live Mermaid UML diagrams.
+
+## Installation
+See the [extension README](.pi/extensions/visual-plan/README.md) for installation instructions.
 
 ## Quick start
 
