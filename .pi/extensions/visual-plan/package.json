@@ -1,0 +1,29 @@
+{
+  "name": "pi-visual-plan",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A UML-first planning mode and live localhost plan viewer for pi.",
+  "dependencies": {
+    "markdown-it": "^14.1.0",
+    "mermaid": "^11.12.0",
+    "typebox": "^1.1.38"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-ai": "^0.80.10",
+    "@earendil-works/pi-coding-agent": "^0.80.10",
+    "@types/node": "^24.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": ">=0.80.0"
+  },
+  "scripts": {
+    "check": "tsc --noEmit",
+    "test": "tsx --test test/*.test.ts"
+  },
+  "pi": {
+    "extensions": ["./index.ts"]
+  }
+}

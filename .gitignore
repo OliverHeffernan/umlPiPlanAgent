@@ -1,0 +1,4 @@
+node_modules/
+.pi/plans/
+*.tmp
+.DS_Store
