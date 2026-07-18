@@ -4,13 +4,28 @@ A project-local pi extension that separates idea discovery from implementation d
 
 ## Install
 
-From this directory:
+Install for your user account:
 
 ```bash
-npm install
+pi install npm:pi-visual-plan
 ```
 
-Then start pi in the project root. Because this extension is under `.pi/extensions/`, pi discovers it after the project is trusted. Use `/reload` after changing extension code.
+Or try it for one run without installing:
+
+```bash
+pi -e npm:pi-visual-plan
+```
+
+To share it through project settings, install it locally with `pi install -l npm:pi-visual-plan`. Pi installs the package after collaborators trust the project.
+
+Update or remove it with:
+
+```bash
+pi update npm:pi-visual-plan
+pi remove npm:pi-visual-plan
+```
+
+For local development, clone the repository, run `npm install` in `.pi/extensions/visual-plan/`, and use `/reload` after changing extension code.
 
 ## Commands
 

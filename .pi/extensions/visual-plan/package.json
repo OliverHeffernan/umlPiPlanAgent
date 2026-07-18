@@ -1,13 +1,39 @@
 {
   "name": "pi-visual-plan",
   "version": "0.1.0",
-  "private": true,
   "type": "module",
   "description": "A UML-first planning mode and live localhost plan viewer for pi.",
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "uml",
+    "mermaid",
+    "planning"
+  ],
+  "license": "MIT",
+  "author": "Oliver Heffernan",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OliverHeffernan/umlPiPlanAgent.git",
+    "directory": ".pi/extensions/visual-plan"
+  },
+  "homepage": "https://github.com/OliverHeffernan/umlPiPlanAgent#readme",
+  "bugs": {
+    "url": "https://github.com/OliverHeffernan/umlPiPlanAgent/issues"
+  },
+  "files": [
+    "index.ts",
+    "plan-format.ts",
+    "server.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "markdown-it": "^14.1.0",
-    "mermaid": "^11.12.0",
-    "typebox": "^1.1.38"
+    "mermaid": "^11.12.0"
   },
   "devDependencies": {
     "@earendil-works/pi-ai": "^0.80.10",
@@ -17,11 +43,14 @@
     "typescript": "^5.9.0"
   },
   "peerDependencies": {
-    "@earendil-works/pi-coding-agent": ">=0.80.0"
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*",
+    "typebox": "*"
   },
   "scripts": {
     "check": "tsc --noEmit",
-    "test": "tsx --test test/*.test.ts"
+    "test": "tsx --test test/*.test.ts",
+    "prepublishOnly": "npm run check && npm test"
   },
   "pi": {
     "extensions": ["./index.ts"]
