@@ -65,7 +65,7 @@ export async function startPlanServer(options: {
 				"cache-control": "no-cache",
 				connection: "keep-alive",
 			});
-			res.write("data: ready\\n\\n");
+			res.write("data: ready\n\n");
 			clients.add(res);
 			req.on("close", () => clients.delete(res));
 		} else if (
@@ -128,7 +128,7 @@ export async function startPlanServer(options: {
 		try {
 			const current = (await stat(options.planPath)).mtimeMs;
 			if (lastMtime && current !== lastMtime)
-				for (const client of clients) client.write("data: changed\\n\\n");
+				for (const client of clients) client.write("data: changed\n\n");
 			lastMtime = current;
 		} catch {
 			/* Plan may not exist yet. */
@@ -139,7 +139,7 @@ export async function startPlanServer(options: {
 	return {
 		url: `http://127.0.0.1:${address.port}`,
 		notifyChanged() {
-			for (const client of clients) client.write("data: changed\\n\\n");
+			for (const client of clients) client.write("data: changed\n\n");
 		},
 		async close() {
 			clearInterval(timer);
