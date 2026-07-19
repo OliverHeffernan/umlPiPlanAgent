@@ -1,6 +1,6 @@
 {
   "name": "pi-visual-plan",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "A UML-first planning mode and live localhost plan viewer for pi.",
   "keywords": [
@@ -23,6 +23,8 @@
   },
   "files": [
     "index.ts",
+    "instructions.ts",
+    "page.html",
     "plan-format.ts",
     "server.ts",
     "README.md",
@@ -53,6 +55,8 @@
     "prepublishOnly": "npm run check && npm test"
   },
   "pi": {
-    "extensions": ["./index.ts"]
+    "extensions": [
+      "./index.ts"
+    ]
   }
 }

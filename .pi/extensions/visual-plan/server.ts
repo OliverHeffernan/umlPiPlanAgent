@@ -9,7 +9,7 @@ export interface PlanServer {
 	notifyChanged(): void;
 }
 
-const PAGE = await readFile("./page.html", "utf8");
+const PAGE = await readFile(new URL("./page.html", import.meta.url), "utf8");
 
 function send(
 	res: ServerResponse,
